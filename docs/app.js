@@ -64,8 +64,11 @@ function renderLeaderboard() {
       <tr>
         <td class="rank-cell"><span class="rank-badge">${String(index + 1).padStart(2, "0")}</span></td>
         <td class="agent-cell">
-          <span class="agent-name">${agent.model}${isBest ? '<span class="best-chip">Best overall</span>' : ""}</span>
-          <span class="framework-name">${agent.framework}</span>
+          <span class="agent-name">
+            <span>${agent.model}</span>
+            <span class="framework-badge">${agent.framework}</span>
+            ${isBest ? '<span class="best-chip">Best</span>' : ""}
+          </span>
         </td>
         <td class="metric-cell">${metricMarkup(agent.pass, 35, "%")}</td>
         <td class="metric-cell">${metricMarkup(agent.score, 55)}</td>

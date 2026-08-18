@@ -862,7 +862,7 @@ table {
 
 th,
 td {
-  padding: 18px 14px;
+  padding: 14px 12px;
   border-bottom: 1px solid var(--border);
   text-align: left;
 }
@@ -915,23 +915,29 @@ tr:first-child .rank-badge {
 
 .agent-name {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 9px;
-  margin-bottom: 4px;
+  gap: 6px;
   font-size: 15px;
 }
 
+.framework-badge,
 .agent-name .best-chip {
   padding: 4px 7px;
   border-radius: 999px;
-  color: #0d5e32;
-  background: var(--mint);
   font-size: 10px;
+  line-height: 1;
 }
 
-.framework-name {
-  color: var(--fog);
-  font-size: 12px;
+.framework-badge {
+  border: 1px solid rgba(10, 13, 18, 0.08);
+  color: var(--graphite);
+  background: var(--mist-gray);
+}
+
+.agent-name .best-chip {
+  color: #0d5e32;
+  background: var(--mint);
 }
 
 .metric-cell {
