@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RabbitHoleBench evaluates long-horizon web agents on dynamic, multimodal puzzle-solving tasks.">
+  <meta name="theme-color" content="#ebf5ff">
+  <title>RabbitHoleBench — Long-Horizon Web Agent Benchmark</title>
+  <link rel="icon" href="assets/rabbithole-mark-v3.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter+Tight:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="RabbitHoleBench home">
+        <img src="assets/rabbithole-mark-v3.webp" alt="" width="42" height="42">
+        <span>RabbitHoleBench</span>
+      </a>
+      <div class="nav-links">
+        <a href="#benchmark">Benchmark</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#findings">Findings</a>
+      </div>
+      <a class="nav-cta" href="#leaderboard">View results <span aria-hidden="true">↘</span></a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-shell" id="top">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Long-horizon web agent evaluation</p>
+        <h1>How far can an agent go down the <em>rabbit hole?</em></h1>
+        <p class="hero-lede">
+          RabbitHoleBench tests whether web agents can sustain evidence-grounded progress across live,
+          multimodal puzzle-solving tasks for hundreds of steps.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#leaderboard">Explore the leaderboard</a>
+          <a class="button button-ghost" href="#benchmark">How it works <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal" aria-label="RabbitHoleBench visual mark">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+        <div class="hero-sticker sticker-top">500-step runs</div>
+        <div class="hero-sticker sticker-bottom">live websites</div>
+        <div class="rabbit-stage">
+          <img src="assets/rabbithole-mark-v3.png" alt="RabbitHoleBench rabbit mark" width="2048" height="2048">
+        </div>
+        <svg class="hero-scribble" viewBox="0 0 180 70" aria-hidden="true">
+          <path d="M5 57c28-34 57-47 82-37 18 7 5 25-12 19-23-8-5-29 27-25 24 3 43 19 70 49"/>
+        </svg>
+      </div>
+
+      <div class="hero-metrics reveal" aria-label="Benchmark summary">
+        <article>
+          <span class="metric-value">79</span>
+          <span class="metric-label">long-horizon tasks</span>
+        </article>
+        <article>
+          <span class="metric-value">525</span>
+          <span class="metric-label">verifiable milestones</span>
+        </article>
+        <article>
+          <span class="metric-value">500</span>
+          <span class="metric-label">steps per run</span>
+        </article>
+        <article>
+          <span class="metric-value">13</span>
+          <span class="metric-label">evaluated agents</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="benchmark section-shell" id="benchmark">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> The benchmark</p>
+        <h2>Short tasks hide the failures that emerge over time.</h2>
+        <p>
+          RabbitHoleBench turns browser-playable puzzle games into verifiable long-horizon tasks with
+          player-equivalent access, ordered milestones, and trajectory auditing.
+        </p>
+      </div>
+
+      <div class="overview-card reveal">
+        <div class="overview-caption">
+          <span class="pill pill-blue">Construction → run → evaluation</span>
+          <p>Solver verification establishes a valid route; recorded trajectories support outcome, progress, capability, and integrity scoring.</p>
+        </div>
+        <picture>
+          <source srcset="assets/benchmark-frame5.webp" type="image/webp">
+          <img src="assets/benchmark-frame5.png" alt="RabbitHoleBench construction, agent run, monitoring, and evaluation overview" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="benchmark-principles reveal" aria-label="Benchmark design principles">
+        <article>
+          <span>01</span>
+          <h3>Continuous trajectories</h3>
+          <p>Exploration, acquisition, interaction, synthesis, and reasoning unfold inside one run.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Verifiable progress</h3>
+          <p>Ordered milestones score recorded evidence rather than relying on the agent's self-report.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Guarded live access</h3>
+          <p>Player-equivalent tools preserve task feasibility while blocking privileged shortcuts.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="leaderboard section-shell" id="leaderboard">
+      <div class="section-heading split-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> Results snapshot</p>
+          <h2>The long-horizon leaderboard.</h2>
+        </div>
+        <p>
+          Pass rate measures end-to-end completion; milestone score measures verified partial progress.
+          Each agent attempts every task in three independent runs.
+        </p>
+      </div>
+
+      <div class="leaderboard-panel reveal">
+        <div class="leaderboard-toolbar">
+          <div class="filter-group" role="group" aria-label="Filter leaderboard by agent framework">
+            <button class="filter-button active" type="button" data-framework="All">All agents</button>
+            <button class="filter-button" type="button" data-framework="Claude Code">Claude Code</button>
+            <button class="filter-button" type="button" data-framework="Codex">Codex</button>
+            <button class="filter-button" type="button" data-framework="Pi">Pi</button>
+          </div>
+          <p class="sort-hint">Select a column to sort</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">RabbitHoleBench agent leaderboard</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="rank-column">Rank</th>
+                <th scope="col">Agent</th>
+                <th scope="col"><button type="button" class="sort-button active" data-sort="pass">Pass rate <span>↓</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="score">Milestone score <span>↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="steps">Avg. steps <span>↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="cost">Cost <span>↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-button" data-sort="tokens">Tokens <span>↕</span></button></th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+          </table>
+        </div>
+
+        <div class="leaderboard-note">
+          <span>Agent = model + agent framework pairing.</span>
+          <span>Costs and tokens cover one complete benchmark run.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="findings section-shell" id="findings">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> What the benchmark reveals</p>
+        <h2>Long horizons reveal capability and integrity gaps.</h2>
+      </div>
+
+      <div class="finding-grid">
+        <article class="finding-card finding-primary reveal">
+          <span class="finding-kicker">Best result</span>
+          <strong>29.1%</strong>
+          <h3>End-to-end pass rate</h3>
+          <p>The strongest evaluated agent takes 389 steps on average, yet completes fewer than one in three tasks.</p>
+        </article>
+
+        <article class="finding-card finding-solar reveal">
+          <span class="finding-kicker">Hardest demand</span>
+          <strong>81.3%</strong>
+          <h3>Synthesis milestone failure</h3>
+          <p>Synthesis fails most often, followed closely by interaction and reasoning milestones.</p>
+        </article>
+
+        <article class="finding-card finding-dark reveal">
+          <span class="finding-kicker">Without guardrails</span>
+          <strong>96.2%</strong>
+          <h3>Successful shortcutting</h3>
+          <p>Removing guardrails raises apparent pass rate to 64.5%, but nearly every run succeeds through prohibited routes.</p>
+        </article>
+      </div>
+
+      <div class="chart-story reveal">
+        <div class="chart-copy">
+          <span class="pill pill-dark">Long-horizon scaling</span>
+          <h3>Rankings do not stabilize until 215 steps.</h3>
+          <p>
+            At short horizons, agents look more similar and can appear in the wrong order. The mean pairwise
+            score gap grows from 2.7 at 20 steps to 12.1 at 500 steps, revealing both progress efficiency and persistence.
+          </p>
+        </div>
+        <figure class="chart-frame">
+          <div class="chart-plot-grid">
+            <div class="plot-panel">
+              <picture>
+                <source srcset="assets/score-by-step.webp" type="image/webp">
+                <img src="assets/score-by-step.png" alt="Agent milestone score as the step budget increases" loading="lazy">
+              </picture>
+            </div>
+            <div class="plot-panel">
+              <picture>
+                <source srcset="assets/rank-agreement.webp" type="image/webp">
+                <img src="assets/rank-agreement.png" alt="Pairwise score gap and rank agreement as the step budget increases" loading="lazy">
+              </picture>
+            </div>
+          </div>
+          <figcaption>Short-horizon evaluations may compress agent differences and miss their final ordering.</figcaption>
+        </figure>
+      </div>
+
+      <div class="capability-panel reveal">
+        <div>
+          <span class="pill pill-dark">Capability diagnostics</span>
+          <h3>Where trajectories break.</h3>
+          <p>Average failure rate on milestones grouped by their primary capability demand. Lower is better.</p>
+        </div>
+        <div class="capability-bars" aria-label="Average milestone failure rates by capability">
+          <div><span>Exploration</span><i><b style="--bar:30%"></b></i><strong>30.0%</strong></div>
+          <div><span>Acquisition</span><i><b style="--bar:65.2%"></b></i><strong>65.2%</strong></div>
+          <div><span>Reasoning</span><i><b style="--bar:76.2%"></b></i><strong>76.2%</strong></div>
+          <div><span>Interaction</span><i><b style="--bar:80%"></b></i><strong>80.0%</strong></div>
+          <div><span>Synthesis</span><i><b style="--bar:81.3%"></b></i><strong>81.3%</strong></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer section-shell">
+    <a class="brand" href="#top">
+      <img src="assets/rabbithole-mark-v3.webp" alt="" width="38" height="38">
+      <span>RabbitHoleBench</span>
+    </a>
+    <p>Long-horizon puzzle-solving for web agents.</p>
+  </footer>
+</body>
+</html>
